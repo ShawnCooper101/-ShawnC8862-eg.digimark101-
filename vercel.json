@@ -1,0 +1,56 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "redirects": [
+    {
+      "source": "/shop",
+      "destination": "https://digimark101.shop",
+      "permanent": false
+    },
+    {
+      "source": "/blog",
+      "destination": "https://digimark101.info/blog",
+      "permanent": false
+    },
+    {
+      "source": "/resources",
+      "destination": "https://digimark101.info",
+      "permanent": false
+    },
+    {
+      "source": "/app",
+      "destination": "https://app.allinonemarketing.com",
+      "permanent": false
+    },
+    {
+      "source": "/software",
+      "destination": "https://app.allinonemarketing.com",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://digimark101.com, https://digimark101.shop, https://digimark101.info, https://app.allinonemarketing.com"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_MAIN_DOMAIN": "digimark101.com",
+    "NEXT_PUBLIC_SHOP_DOMAIN": "digimark101.shop",
+    "NEXT_PUBLIC_INFO_DOMAIN": "digimark101.info",
+    "NEXT_PUBLIC_APP_DOMAIN": "app.allinonemarketing.com"
+  }
+}

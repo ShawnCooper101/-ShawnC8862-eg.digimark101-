@@ -1,19 +1,46 @@
-# OpenAI API Handler
+# DigiMark101 AI Assistant Web Application
 
-A Next.js application with an API endpoint that integrates with OpenAI's GPT-3.5-turbo model to answer user questions.
+A full-stack Next.js application featuring an intelligent AI chat interface powered by OpenAI's GPT-3.5-turbo model with integrated PayPal checkout for premium subscriptions.
+
+## Multi-Domain Agency Platform
+
+This application is part of a comprehensive digital marketing agency platform spanning multiple domains:
+
+- **digimark101.com** - Main AI Assistant (this app)
+- **digimark101.shop** - E-commerce platform for digital products
+- **digimark101.info** - Resources, blog, and educational content
+- **app.allinonemarketing.com** - WordPress-based marketing software
+
+See [DOMAIN-STRATEGY.md](./DOMAIN-STRATEGY.md) for complete domain architecture and [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment instructions.
 
 ## Features
 
-- POST endpoint at `/api/ask` for submitting questions
-- System prompt configured for concise, polite, and helpful responses
-- Input validation for proper request handling
-- Error handling for robust API responses
+### Frontend
+- 🤖 Beautiful, modern chat interface with avatar
+- 💬 Real-time AI conversations
+- 🎨 Gradient design with smooth animations
+- 📱 Responsive layout
+- ⌨️ Keyboard shortcuts (Enter to send)
+
+### Backend
+- 🔌 POST endpoint at `/api/ask` for submitting questions
+- 🧠 OpenAI GPT-3.5-turbo integration
+- ✅ Input validation for proper request handling
+- 🛡️ Error handling for robust API responses
+- 📝 System prompt configured for concise, polite, and helpful responses
+
+### Payment Integration
+- 💳 PayPal checkout integration
+- 💰 Premium subscription support
+- 🔒 Secure payment processing
+- 📧 Configured for earndaily101@mail.com
 
 ## Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 - OpenAI API key
+- PayPal Client ID (for payment processing)
 
 ## Installation
 
@@ -23,12 +50,14 @@ A Next.js application with an API endpoint that integrates with OpenAI's GPT-3.5
    npm install
    ```
 
-3. Create a `.env.local` file in the root directory and add your OpenAI API key:
+3. Create a `.env.local` file in the root directory and add your credentials:
    ```
    OPENAI_API_KEY=your_openai_api_key_here
+   NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_paypal_client_id_here
    ```
    
-   You can get your API key from [OpenAI Platform](https://platform.openai.com/account/api-keys)
+   - Get your OpenAI API key from [OpenAI Platform](https://platform.openai.com/account/api-keys)
+   - Get your PayPal Client ID from [PayPal Developer](https://developer.paypal.com/)
 
 ## Usage
 
@@ -40,7 +69,9 @@ Run the development server:
 npm run dev
 ```
 
-The API will be available at `http://localhost:3000/api/ask`
+The application will be available at `http://localhost:3000`
+- Frontend chat interface: `http://localhost:3000`
+- Backend API endpoint: `http://localhost:3000/api/ask`
 
 ### Production
 
